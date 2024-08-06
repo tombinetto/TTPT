@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Match List</title>
+</head>
+<body>
+    <h1>Match List</h1>
+    <ul>
+        {% for match in matches %}
+            <li>{{ match.player1 }} vs {{ match.player2 }} on {{ match.date_played }} - Score: {{ match.player1_score }}:{{ match.player2_score }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
