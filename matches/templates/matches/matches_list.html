@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Match List</title>
-</head>
-<body>
-    <h1>Match List</h1>
-    <ul>
+<div class="container">
+    <h1 class="mt-5">Match List</h1>
+    <ul class="list-group mt-3">
         {% for match in matches %}
-            <li>{{ match.player1 }} vs {{ match.player2 }} on {{ match.date_played }} - Score: {{ match.player1_score }}:{{ match.player2_score }}</li>
+            <li class="list-group-item">
+                {{ match.player1.user.username }} (Elo: {{ match.player1.elo_rating }}) 
+                vs 
+                {{ match.player2.user.username }} (Elo: {{ match.player2.elo_rating }}) 
+                on {{ match.date_played }} - Score: {{ match.player1_score }}:{{ match.player2_score }}
+            </li>
         {% endfor %}
     </ul>
-</body>
-</html>
+</div>
